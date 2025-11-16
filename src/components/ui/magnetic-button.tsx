@@ -16,7 +16,7 @@ import { ButtonHTMLAttributes, forwardRef } from "react";
  * <MagneticButton>Click Me</MagneticButton>
  * ```
  */
-interface MagneticButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface MagneticButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onDrag' | 'onDragStart' | 'onDragEnd'> {
   strength?: number;
   distance?: number;
   withRotation?: boolean;
@@ -114,7 +114,9 @@ MagneticButton.displayName = "MagneticButton";
  * </MagneticIconButton>
  * ```
  */
-interface MagneticIconButtonProps extends MagneticButtonProps {
+interface MagneticIconButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onDrag' | 'onDragStart' | 'onDragEnd'> {
+  strength?: number;
+  distance?: number;
   size?: "sm" | "md" | "lg";
 }
 
