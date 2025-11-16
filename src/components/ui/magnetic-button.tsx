@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useMagnetic, useMagneticRotation } from "@/hooks/use-magnetic";
+import { motion, useTransform } from "framer-motion";
+import { useMagnetic } from "@/hooks/use-magnetic";
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
@@ -38,9 +38,11 @@ export const MagneticButton = forwardRef<HTMLButtonElement, MagneticButtonProps>
     },
     ref
   ) => {
-    const magnetic = withRotation
-      ? useMagneticRotation(strength, distance)
-      : useMagnetic(strength, distance);
+    // Always call hooks in the same order
+    const magnetic = useMagnetic(strength, distance);
+
+    // Optionally add rotation based on x position
+    const rotate = useTransform(magnetic.x, [-20, 20], [-5, 5]);
 
     const variants = {
       default: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -61,7 +63,7 @@ export const MagneticButton = forwardRef<HTMLButtonElement, MagneticButtonProps>
         style={{
           x: magnetic.x,
           y: magnetic.y,
-          rotate: withRotation && "rotate" in magnetic ? magnetic.rotate : 0,
+          rotate: withRotation ? rotate : 0,
         }}
         onMouseMove={magnetic.handleMouseMove}
         onMouseLeave={magnetic.handleMouseLeave}
