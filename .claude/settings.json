@@ -1,0 +1,77 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(cat:*)",
+      "mcp__magic__21st_magic_component_builder",
+      "mcp__magic__21st_magic_component_inspiration",
+      "mcp__magic__21st_magic_component_refiner",
+      "mcp__magic__logo_search",
+      "mcp__wonderwhy-er-desktop-commander__list_directory",
+      "mcp__wonderwhy-er-desktop-commander__read_file",
+      "mcp__wonderwhy-er-desktop-commander__write_file",
+      "mcp__wonderwhy-er-desktop-commander__start_process",
+      "mcp__wonderwhy-er-desktop-commander__read_process_output",
+      "mcp__wonderwhy-er-desktop-commander__interact_with_process",
+      "mcp__wonderwhy-er-desktop-commander__get_config",
+      "mcp__pv-bhat-vibe-check-mcp-server__vibe_check",
+      "mcp__pv-bhat-vibe-check-mcp-server__vibe_learn",
+      "mcp__shadcn__get_project_registries",
+      "mcp__shadcn__list_items_in_registries",
+      "mcp__shadcn__search_items_in_registries",
+      "mcp__shadcn__view_items_in_registries",
+      "mcp__shadcn__get_item_examples_from_registries",
+      "mcp__shadcn__get_add_command_for_items",
+      "mcp__shadcn__get_audit_checklist",
+      "mcp__hello-ggx-shadcn-vue-mcp__requirement-structuring",
+      "mcp__hello-ggx-shadcn-vue-mcp__components-filter",
+      "mcp__hello-ggx-shadcn-vue-mcp__component-usage-doc",
+      "mcp__hello-ggx-shadcn-vue-mcp__component-builder",
+      "mcp__hello-ggx-shadcn-vue-mcp__component-quality-check"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "shadcn",
+    "magic",
+    "wonderwhy-er-desktop-commander",
+    "pv-bhat-vibe-check-mcp-server",
+    "hello-ggx-shadcn-vue-mcp"
+  ],
+  "mcpServers": {
+    "shadcn": {
+      "description": "shadcn/ui component library for React/Next.js projects"
+    },
+    "magic": {
+      "description": "AI-powered component builder for React/Next.js with 21st.dev integration"
+    },
+    "wonderwhy-er-desktop-commander": {
+      "description": "Advanced file system operations and process management"
+    },
+    "pv-bhat-vibe-check-mcp-server": {
+      "description": "Code quality assessment and metacognitive checks"
+    },
+    "hello-ggx-shadcn-vue-mcp": {
+      "description": "Vue.js component builder with shadcn/ui patterns (optional for Vue projects)"
+    }
+  },
+  "projectInfo": {
+    "name": "Rhys Thomas Portfolio",
+    "type": "Next.js",
+    "framework": "React",
+    "styling": "Tailwind CSS",
+    "ui": "shadcn/ui",
+    "description": "Portfolio website for Rhys Thomas - Cybersecurity Specialist & AI Developer"
+  }
+}
