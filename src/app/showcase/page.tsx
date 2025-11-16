@@ -26,7 +26,7 @@ export default function ShowcasePage() {
           {
             text: "GitHub",
             href: "https://github.com/rhysthomas",
-            variant: "glow",
+            variant: "secondary",
             icon: <Icons.gitHub className="h-5 w-5" />,
           },
         ]}

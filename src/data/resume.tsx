@@ -34,31 +34,73 @@ export const DATA = {
     "Security Audits",
     "API Integration",
   ],
+  skillCategories: {
+    "AI & LLM": [
+      "Claude (Opus/Sonnet)",
+      "OpenAI GPT-4",
+      "Llama 3",
+      "Mistral",
+      "DeepSeek",
+      "NotebookLM",
+      "LangChain",
+      "MCP Servers",
+    ],
+    "Cybersecurity": [
+      "Penetration Testing",
+      "CVE Research",
+      "OSINT",
+      "Security Audits",
+      "PNPT Certified",
+      "CompTIA Security+",
+    ],
+    "Development": [
+      "React",
+      "Next.js",
+      "Python",
+      "Node.js",
+      "JavaScript",
+      "TypeScript",
+      "API Integration",
+    ],
+    "Infrastructure": [
+      "Proxmox",
+      "Linux Administration",
+      "Docker",
+      "System Administration",
+      "Automation",
+    ],
+    "Creative": [
+      "DaVinci Resolve",
+      "Video Production",
+      "Technical Documentation",
+      "Process Documentation",
+    ],
+  },
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "hello@rhysthomas.dev",
-    tel: "+44123456789",
+    tel: "+61 4XX XXX XXX",
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/rhysthomas",
+        url: "https://github.com/ribkid",
         icon: Icons.github,
 
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/rhysthomas",
+        url: "https://www.linkedin.com/in/rhys-thomas-cybersec",
         icon: Icons.linkedin,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://x.com/rhysthomas",
+        url: "https://x.com/rhysthomas_dev",
         icon: Icons.x,
 
         navbar: true,
