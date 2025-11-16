@@ -1,6 +1,8 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ErrorBoundary } from "@/components/error-boundary";
+import { CustomCursor } from "@/components/custom-cursor";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -105,7 +107,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.json",
   alternates: {
     canonical: DATA.url,
     types: {
@@ -362,11 +364,36 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={0}>
-            {children}
-            <Navbar />
-          </TooltipProvider>
+          <ErrorBoundary>
+            <TooltipProvider delayDuration={0}>
+              <CustomCursor />
+              {children}
+              <Navbar />
+            </TooltipProvider>
+          </ErrorBoundary>
         </ThemeProvider>
+
+        {/* PWA Service Worker Registration */}
+        <Script
+          id="sw-register"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(
+                    function(registration) {
+                      console.log('ServiceWorker registration successful:', registration.scope);
+                    },
+                    function(err) {
+                      console.log('ServiceWorker registration failed:', err);
+                    }
+                  );
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );
